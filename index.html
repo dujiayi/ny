@@ -1,0 +1,204 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>首页</title>
+<link rel="stylesheet" type="text/css" href="css/index.css">
+
+</head>
+
+<body>
+<!--头部搜索栏-->
+<div class="head">
+	<div class="head_ss">
+        <input type="text" value="产品搜索" class="head_input">
+    	<img src="img/ss.png" class="ss">
+    </div>
+</div>
+<!--导航-->
+<div class="nav">
+	<img src="img/logo.gif" class="logo">
+	<div class="nav_list">
+    	<ul class="menu">
+        	<li><a href="index.html" target="_blank">首页</a></li>
+        	<li><a href="about.html" target="_blank">关于我们</a></li>
+        	<li><a href="xinwenzhongxin.html" target="_blank">新闻中心</a></li>
+        	<li><a href="#">项目简介</a></li>
+        	<li><a href="#">招标信息</a></li>
+        	<li><a href="#">精品展示</a></li>
+        	<li><a href="gongyingxinx.html" target="_blank">供应信息</a><span class="new"></span></li>
+        	<li><a href="#">培育技术</a></li>
+        	<li><a href="#">人力资源</a></li>
+        	<li class="menu_linone"><a href="rencaizhanl.html" target="_blank">联系我们</a></li>
+        </ul>
+    </div>
+</div>
+<!--背景-->
+<!-- wrap包裹录播的图片以及可点击跳转的按钮 -->  
+    <div class="wrap" id="wrap">  
+        <ul id="pic">  
+             <li><img src="img/banner1.png" alt=""></li> 
+             <li><img src="img/banner.jpg" alt=""></li>  
+             <li><img src="img/banner3.jpg" alt=""></li>  
+             <li><img src="img/banner2.jpg" alt=""></li>   
+        </ul>  
+        <ol id="list">  
+            <li class="active"></li>  
+            <li></li>  
+            <li></li>  
+            <li></li>  
+        </ol>  
+    </div>  
+    <script type="text/javascript">  
+	window.onload=function(){  
+    var wrap=document.getElementById('wrap'),  
+        pic=document.getElementById('pic'),  
+        list=document.getElementById('list').getElementsByTagName('li'),  
+        index=0,  
+        timer=null;  
+  
+      // 定义并调用自动播放函数  
+      if(timer){  
+            
+          clearInterval(timer);  
+          timer=null;  
+      }  
+	timer=setInterval(autoplay,2000);  
+      // 定义图片切换函数  
+      function autoplay(){  
+          index++;  
+          if(index>=list.length){  
+              index=0;  
+          }  
+         changeoptions(index);  
+      }  
+     // 鼠标划过整个容器时停止自动播放  
+	wrap.onmouseover=function(){ 
+    clearInterval(timer);  
+	}  
+     // 鼠标离开整个容器时继续播放至下一张  
+    wrap.onmouseout=function(){  
+    timer=setInterval(autoplay,2000);  
+}  
+     // 遍历所有数字导航实现划过切换至对应的图片  
+     for(var i=0;i<list.length;i++){  
+         list[i].id=i;  
+         list[i].onmouseover=function(){  
+             clearInterval(timer);  
+             changeoptions(this.id);  
+               
+             }  
+         }  
+        function changeoptions(curindex){  
+            for(var j=0;j<list.length;j++){  
+              list[j].className='';  
+              pic.style.top=0;  
+                
+          }  
+          list[curindex].className='active';  
+          pic.style.top=-curindex*352+'px';  
+          index=curindex;  
+            }   
+       
+   } 
+    </script>  
+<!--花的品种-->
+<div class="flower">
+	<div class="flower_img">
+    	<a href="#"><img src="img/m1.png" title="红豆杉">红豆杉</a>
+    	<a href="#"><img src="img/m2.png" title="桂 花">桂 花</a>
+    	<a href="#"><img src="img/m3.png" title="小叶桢楠">小叶桢楠</a>
+    	<a href="#"><img src="img/m4.png" title="樱花">樱 花</a>
+    	<a href="#"><img src="img/m5.png" title="紫薇">紫 薇</a>
+    	<a href="#"><img src="img/m6.png" title="红叶李">红叶李</a>
+    	<a href="#"><img src="img/m7.png" title="垂柳">垂 柳</a>
+    	<a href="#"><img src="img/m8.png" title="合欢">合 欢</a>
+    	<a href="#" class="last_img"><img src="img/m9.png" title="栾树">栾 树</a>
+    	<div class="line"><img src="img/xx.png"></div>
+    	<a href="#"><img src="img/g1.png" title="红豆杉">国 槐</a>
+    	<a href="#"><img src="img/g2.png" title="桂 花">乌 桕</a>
+    	<a href="#"><img src="img/g3.png" title="小叶桢楠">无患子</a>
+    	<a href="#"><img src="img/g4.png" title="樱花">台湾桤木</a>
+    	<a href="#"><img src="img/g5.png" title="紫薇">高杆女贞</a>
+    	<a href="#"><img src="img/g6.png" title="红叶李">红叶石楠</a>
+    	<a href="#"><img src="img/g7.png" title="垂柳">香 樟</a>
+    	<a href="#"><img src="img/g8.png" title="合欢">广玉兰</a>
+    	<a href="#" class="last_img"><img src="img/g9.png" title="栾树"></a>
+    </div>
+</div>
+<!--关于我们-->
+<div class="about">
+	<div class="about_left">
+    	<p class="about_title">
+            关于我们
+            <img src="img/AboutUs.png" class="text_img1">
+            <img src="img/MORE.png" class="text_img2">
+        </p>
+        <span class="about_text">
+            安徽荣鸿农业开发股份有限公司在安徽省全椒县石沛镇投资了大型现代化农业示范产业园区——安徽荣鸿农业科技示范园，作为园区管理机构，安徽荣鸿农业开发股份有限公司（注册资......
+            <a href="#" class="viewmore">【查看更多】</a>
+        </span>
+        <span class="about_img"><img src="img/ws.png"></span>
+    </div>
+	<div class="about_right">
+    	<p class="about_title">
+            关于我们
+            <img src="img/AboutUs.png" class="text_img1">
+            <img src="img/MORE.png" class="text_img3">
+        </p>
+    	<span class="about_img"><img src="img/kh.png"></span>
+        <ul class="new_text">
+        	<li><span>04.28</span><a href="">全中国爱心植树金牛集</a></li>
+        	<li><span>04.20</span><a href="">农村工作现场会领导参</a></li>
+        	<li><span>03.08</span><a href="">情系“三八”节</a></li>
+        	<li><span>03.28</span><a href="">投资有限责任公司最新</a></li>
+        </ul>
+    </div>
+</div>
+<!--友情链接-->
+<div class="bg_color"></div>
+<div class="herf">
+	<ul>
+    	<li class="li1">友情链接</li>
+    	<li class="li2"><img src="img/st1.png"><span>生态农业</span></li>
+    	<li class="li3"><img src="img/st2.png"><span>生态农业</span></li>
+    	<li class="li4"><img src="img/st3.png"><span>生态农业</span></li>
+    	<li class="li5"><img src="img/st4.png"><span>生态农业</span></li>
+    </ul>
+	<div class="fh"></div>
+	<div class="fh2"></div>
+    <div class="tel">
+    	<img src="img/tel.png">
+    	<b>&nbsp;服务热线&nbsp;|&nbsp;</b>400-1234-567
+    </div>
+</div>
+<!---->
+<div class="bg_color2"></div>
+<footer>
+	<!---->
+	<div class="footer_link">
+    	<span class="botlink">
+        	<a href="#">供应信息</a>
+        	<a href="#">精品展示</a>
+        	<a href="#">关于我们</a>
+        	<a href="#">联系方式</a>
+        	<a href="#">网站地图</a>
+        </span>
+        <div class="gz_link">
+            <a href="#">关注我们</a>
+        </div>
+    </div>
+    <!---->
+    <div class="copy">
+		Copyright 2013 安徽荣鸿农业开发股份有限公司  皖ICP备14006290号  技术支持：<a href="#">微笑互联</a><br/>
+        <a href="#">荣鸿.com</a>&nbsp;&nbsp;<a href="#">荣鸿农业.com</a><br/>
+        <a href="#" class="copy_img"><img src="img/foot.png"></a>
+    </div>
+</footer>
+<div class="fixed">
+	<a href="#" class="qq"></a>
+	<a href="#" class="wb"></a>
+	<a href="#" class="wx"><div class="wxin"></div></a>
+</div>
+</body>
+</html>
